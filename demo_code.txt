@@ -1,13 +1,13 @@
 
 //start REST OMIT
 
-http://somesite/sendvalue?from=Dave&to=Alice&amount=100.00&for=birthday present
+http://example.com/sendvalue?from=Dave&to=Alice&amount=100.00&for=Happy Birthday Alice!
 
 //end REST OMIT
 
 //start RESTx OMIT
 
-http://somesite/sendvalue?from=Dave&to=Alice&amount=100.00&for=birthday present&signature=1811c4c90b7b
+http://somesite/sendvalue?from=Dave&to=Alice&amount=100.00&for=Happy Birthday Alice!&signature=1811c4c90b7b
 
 //end RESTx OMIT
 

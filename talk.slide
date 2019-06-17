@@ -1,192 +1,122 @@
-Smart Contracts & Blockchain use cases
-29 Nov 2018
+Blockchain, Ethereum, Smart Contracts & Use Cases
+19 June 2019
 Tags: Ethereum, Solidity, Smart Contracts, ETHKL, WomenWhoCode 
 
-Dave Appleton
-Lead blockchain developer, HelloGold
-Senior Advisor, Akomba Labs
-calistralabs@gmail.com
-https://hellogold.com
-@AppletonDave
+Zulhilmi Zainudin
+Blockchain Developer
+www.HelloGold.com
 
-* This evening....
-.image images/talkcover.png
+* What I intend to cover
 
-* Presented by
-
-.image images/women_who_code.png
-
-* And...
-
-.image images/ethkl.png 250 _
-hosted by @ETHKL1 
-.image images/etherscan_logo.png 50 _
-.image images/hg.png 100 _
-
-* What I intend to cover...
-
-- Blockchain in five minutes
-- Smart Contracts Concepts
+- Blockchain concepts
+- Smart contracts concepts
 - Why and when blockchains and smart contracts may be useful
 
-* Introduction (me)
-.background images/Artboard_1.png
 
-.image blockchain.jpg 150 _
-- Englishman living in Southeast Asia for 36 years
-- Programming since 1968
-- background in instrumentation, machine vision
-- Blockchain dev since 2014
-- Lead blockchain developer at HelloGold, Malaysia
-- Blockchain Consultant with Akomba Labs
+* Blockchain
+.image images/blockchain-bg.jpg 500 _
 
-* The blockchain in five minutes
-.background images/Artboard_1.png
+* What is a blockchain?
 
-.image images/blockchain.png 500 _
-
-* What is a blockchain ?
-.background images/Artboard_1.png
-
-- signed transactions
+- Collection of signed transactions
 - Put into signed blocks
-- Which are added to a chain (list) by signed links
-- which is distributed all over a decentralised network
-- in a manner such that all the independant nodes that operate the network agree the whole thing to be valid (consensus)
+- Which is distributed all over a decentralised network
+- In a manner such that all the independant nodes that operate the network agree the whole thing to be valid (consensus)
 
-* Transactions ?
-.background images/Artboard_1.png
-- Anything that can change the state of something.
+* What about transactions?
+- Anything that can change the state of something
 - A transfer of value or data
 
     {
-       From : Dave
-       To : Alice
+       From : "Dave"
+       To : "Alice"
        Value : 100
-       Data : "Happy Birthday Alice. Buy yourself something nice"
+       Data : "Happy Birthday Alice!"
     }
 
 Web analogy:
 
 .code demo_code.txt /start REST OMIT/,/end REST OMIT/
 
-Current state = sum of all previous transactions
-
-* Thought of the day....
-.background images/Artboard_1.png
-
-"Young man, in mathematics you don't understand things. You just get used to them."
-
-.caption John von Neumann.
-
-* Digital Signatures
-.background images/Artboard_1.png
-- a small change in the content causes a huge change in the result.
+* Digital signatures
+- Let's assume we want to store wisdom quote below in blockchain.
+- A small change in the content causes a huge change in the result.
 .play hashBaby.go  /start main OMIT/,/end main OMIT/
 
-If we encrypt the hash value using public key encryption 
+If I encrypt the hash value using my key, you can prove it was from me and make it unforgeable
 
-we can prove it was from me 
-
-and make it unforgeable
-
-* Public Key encryption in 20 seconds
-.background images/Artboard_1.png
-- create a truly random a private key
-- public key (address) derived from private key
-- something encrypted by private key can be read with public key 
-_or_
-
-- you can derive the signer from the encrypted data
-- encrypting the hash, ensures that the hash, thus the document is unchanged
-- and ensures that the signer is who they say they are.
+* Public key encryption
+- Create a truly random a private key
+- Public key (address) derived from private key
+- Something encrypted by private key can be read with public key 
+- You can derive the signer from the encrypted data
+- Encrypting the hash, ensures that the hash, thus the document is unchanged
+- And ensures that the signer is who they say they are.
 
 .code demo_code.txt /start RESTx OMIT/,/end RESTx OMIT/
 
-* signing
-.background images/Artboard_1.png
+* Signing
 .image images/hashing.png
 
-* Into blocks
-.background images/Artboard_1.png
+* Into the blocks
 
 .image images/intoblocks.png 500 _
 
-* In a manner that everybody agrees (Consensus)
-.background images/Artboard_1.png
+* Consensus - how everybody agrees
 
-- the details are not terribly relevent in our context except
-- there are thousands of nodes all working together
-- design of consensus algorithm ensures that no one node makes all the decisions
-- makes it virtually impossible for anybody to modify the past records in the chain
-- means that each node has an identical copy of the state of the blockchain
+- Let's watch this short video - https://youtu.be/0RmgcGFKoGM
+- There are thousands of nodes all working together
+- Design of consensus algorithm ensures that no one node makes all the decisions
+- Makes it virtually impossible for anybody to modify the past records in the chain
+- Means that each node has an identical copy of the state of the blockchain
 
 * Etherscan
-.background images/Artboard_1.png
 
-- have a look at https://etherscan.io 
+- https://etherscan.io 
 .image images/etherscan.png 350 _
 
 * Etherscan
-.background images/Artboard_1.png
-- the Google of the blockchain
+- the 'Google' of the Ethereum blockchain
 
 .image images/etherscan2.png 300 _
 
 * Wallets
-.background images/Artboard_1.png
 
 .image images/wallets.jpg 450 _
 
 
 * Easy ways to access your account/balance?
-.background images/Artboard_1.png
 
-Something that *performs* *one* *or* *more* *of*
+Something that *performs* *one* *or* *more* *of*:
 - managing keys
 - creating transactions
 - signing transactions
-is often called a Wallet. (but it isn't)
 
-* Original Bitcoin philosophy
+* So, blockchain is here to create...
 
-.image images/Gensis-block-hash.jpg 450 _ 
+- A currency that cannot be manipulated by a central authority
+- Fully open
+- No one person controls the code
+- Anybody can fork the code to create a new blockchain with new attributes
 
-* encoded in the genesis block of Bitcoin
-
-.image images/genesis.jpg
-
-* To create
-
-- a currency that cannot be manipulated by a central authority
-- fully open source
-- no one person controls the code
-- anybody can fork the code to create a new blockchain with new attributes
-
-* What makes Ethereum special ?
-.background images/Artboard_1.png
+* Ethereum - what is so special?
 
 .image images/ethereumAndSmart.png 450 _
  
 * Introducing Smart Contracts
-.background images/Artboard_1.png
-- remember the "data" field? ("buy something nice")
-- if we could structure it so it could be understood...
-- we could have programs
-- running on thousands of nodes
-- that all agree with each other
+- Remember the "data" field? ("Happy Birthday Alice!")
+- We could structure it so it could be understood - in a program called Smart Contract
+- We could have programs running on thousands of nodes - that all agree with each other (consensus)
 
 * What are smart contracts
-.background images/Artboard_1.png
 
 .image images/smartcontractonchain.png
 
 * And the whole thing is agreed and transparent
-.background images/Artboard_1.png
 
 .image images/etherscan3.png 400 _
 
-* So how do we interact with a smart contract?
+* Transaction data and log (event)
 
 .image images/etherscan_tx.png 150 _ 
 .image images/eventLog.png 250 _ 
@@ -197,84 +127,68 @@ is often called a Wallet. (but it isn't)
 
 * So, what do we have?
 
-- known code that we can interact with...
-- that will do exactly what the code tells it to
-- and cannot be changed by a malicous actor (unless upgrade specifically implemented)
-- exact copies of that code and state on 1000's of computers
-- unforgeable public records of past transactions
+- Known code that we can interact with
+- That will do exactly what the code tells it to
+- And cannot be changed by a malicous actor (unless upgrade specifically implemented)
+- Exact copies of that code and state on 1000's of computers
+- Unforgeable public records of past transactions
 
-* The end result?
+* So, what is the end result?
 
-- We can transact with unknown parties as long as we can trust the code
+- We can transact with unknown parties as long as we can trust the code (contract)
 - There is NO central authority enforcing compliance, code rules
 - Transactions cannot be reversed (unless the code has a reversal mechanism built in)
 
 
-* So where are we with ethereum? 
+* So where are we with Ethereum? 
 
-- Early days. Analgous to
+- Early days. Like TCP/IP days.
 - The 1980's for databases
 - The year 2000 for the Internet
 
 * Status
 
-- We have a clunky slow system that works but could do better.
+- We have a clunky slow system that works but could do better
 - It is still pretty clumsy to interact with
 - There is a LOT of research going on 
- - usability
- - scaling
- - payment channels
- - privacy
- - interoperability
- - security
+   - usability
+   - scaling
+   - payment channels
+   - privacy
+   - interoperability
+   - security
 
-* Main components to date 
+* Main components so far
 
-- Fungible Tokens
-- Non Fungible Tokens
-- Multisignature wallets
-- Decentralised Autonomous Organisations
-- Prediction markets
-- Atomic swaps
+- Fungible Tokens (HGT/GOLDX)
+- Non-Fungible Tokens (CryptoKitties)
+- Multisignature wallets (MultiSig)
+- Decentralised Autonomous Organisations (DAO)
 - Decentralised exchanges
 
-* Sadly many current applications are either
+* Examples
 
-- techy
-- capitalising on "blockchain"
-.image images/long_island.png 150 _ 
-
-- shoehorning blockchain where inappropriate
-
-* Some are outstandingly successful
-
-- UNHCR aid distribution
-.image images/unhcr.png 100 _
-
-- DAI 
+- DAI (USD backed token)
 .image images/dai.png 100 _ 
 
-- Crypto Zombies
+- Crypto Zombies game
 .image images/zombie.png 100 _ 
 
 * Commercial use of blockchain
 
-- banks using blockchain for settlements
-- Enterprise Ethereum Alliance
+- Banks using blockchain for settlements
+- Facebook Libra Consortium (moving money between FB & partners)
 - JP Morgan / Quorum
 
 * Social Impact / Financial Inclusion
 
 - HelloGold (of course)
-- Kommerce
 - Sentinel Chain
-- Giveth
-- Alice.si 
+- Gitcoin
 
 * The blockchain ecosystem needs
 
-- developers to find good real use cases
-- people to think outside the box to make it usable
-- researchers
-- community
-- to become "boring"
+- Developers
+- Creative people to make it usable
+- Researchers
+- Community
